@@ -1,2 +1,2 @@
 # springmvcjdbctemplate
-Create spring mvc application using CURD operation using JdbcTemplate
+Create spring mvc application with CURD operation using JdbcTemplate
