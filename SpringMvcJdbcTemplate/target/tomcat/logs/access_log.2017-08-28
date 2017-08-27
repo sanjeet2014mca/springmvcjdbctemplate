@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [28/Aug/2017:00:33:56 +0530] "GET /SpringMvcJdbcTemplate/ HTTP/1.1" 200 1245 http-bio-8081-exec-4 5393
+0:0:0:0:0:0:0:1 - - [28/Aug/2017:00:33:56 +0530] "GET /SpringMvcJdbcTemplate/ HTTP/1.1" 200 1245 http-bio-8081-exec-1 5393
+0:0:0:0:0:0:0:1 - - [28/Aug/2017:00:35:27 +0530] "GET /SpringMvcJdbcTemplate/deleteContact?id=26 HTTP/1.1" 302 - http-bio-8081-exec-8 65
+0:0:0:0:0:0:0:1 - - [28/Aug/2017:00:35:27 +0530] "GET /SpringMvcJdbcTemplate/ HTTP/1.1" 200 942 http-bio-8081-exec-9 27

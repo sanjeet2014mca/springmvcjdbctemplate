@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+
+	<appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%5p] [%t %d{hh:mm:ss}] (%F:%M:%L) %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="500000" />
+		<param name="File"
+			value="F:/Logs/Ford/info_spring.log" />
+		<param name="threshold" value="info" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm} %5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="debugfile" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="500000" />
+		<param name="File"
+			value="F:/Logs/Ford/debug_spring.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm} %5p %c{1}:%L - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="debug" />
+			<param name="LevelMax" value="fatal" />
+		</filter>
+	</appender>
+
+	<appender name="errorfile" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="500000" />
+		<param name="File"
+			value="F:/Logs/Ford/error_spring.log" />
+		<param name="threshold" value="error" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm} %5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+
+	<logger name="org.hibernate" additivity="false">
+		<!-- <priority value="WARN"></priority> -->
+		<level value="ERROR" />
+		<appender-ref ref="errorfile" />
+		
+	</logger>
+
+	<logger name="org.springframework" additivity="false">
+		<!-- <priority value="WARN"></priority> -->
+		<level value="ERROR" />
+		<appender-ref ref="errorfile" />
+	</logger>
+
+	<logger name="org.apache" additivity="false">
+		<!-- <priority value="WARN"></priority> -->
+		
+		<level value="ERROR" />
+		<appender-ref ref="errorfile" />
+	
+	</logger>
+
+
+	<root>
+		<!-- <priority value="debug"></priority> -->
+		<appender-ref ref="errorfile" />
+		<appender-ref ref="debugfile" />
+		<appender-ref ref="file" />
+		<appender-ref ref="ConsoleAppender" />
+		
+	</root>
+
+
+</log4j:configuration>
